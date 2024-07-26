@@ -7,47 +7,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>WarCraftBoost</h1>
-        <p>Ваш надежный источник читов и аккаунтов для игр</p>
-    </header>
+    <div class="wrapper">
+        <header>
+            <h1 class="title">WarCraftBoost</h1>
+            <p class="subtitle">Ваш надежный источник читов и аккаунтов для игр</p>
+        </header>
 
-    <div class="container">
-        <div class="card">
-            <h2>Чит для World of Tanks</h2>
-            <p>Наш <span class="highlight">чит для World of Tanks</span> позволяет видеть противников без засвета.</p>
-            <p><span class="highlight">Цена: 499 ₽</span></p>
-            <button onclick="buyItem('wot')">Купить сейчас</button>
+        <div class="container">
+            <div class="card">
+                <h2>Чит для World of Tanks</h2>
+                <p>Наш <span class="highlight">чит для World of Tanks</span> позволяет видеть противников без засвета.</p>
+                <p><span class="highlight">Цена: 499 ₽</span></p>
+                <button onclick="buyItem('wot')">Купить сейчас</button>
+            </div>
+
+            <div class="card">
+                <h2>Чит для Minecraft: HideSOO</h2>
+                <p>Чит <span class="highlight">HideSOO</span> обходит анти-чаты Funtime, HolyWorld и Reallyworld.</p>
+                <p><span class="highlight">Цена: 599 ₽</span></p>
+                <button onclick="buyItem('minecraft')">Купить HideSOO</button>
+            </div>
+
+            <div class="card">
+                <h2>Рандомные аккаунты WoT от Lesta</h2>
+                <p>Получите рандомные аккаунты World of Tanks с 1 до 50+ топовых танков в ангаре.</p>
+                <p><span class="highlight">Цена: 29 ₽</span></p>
+                <button onclick="buyItem('random')">Получить аккаунты</button>
+            </div>
         </div>
 
-        <div class="card">
-            <h2>Чит для Minecraft: HideSOO</h2>
-            <p>Чит <span class="highlight">HideSOO</span> обходит анти-чаты Funtime, HolyWorld и Reallyworld.</p>
-            <p><span class="highlight">Цена: 599 ₽</span></p>
-            <button onclick="buyItem('minecraft')">Купить HideSOO</button>
+        <div class="auth">
+            <h2>Регистрация и вход</h2>
+            <form id="auth-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="button" onclick="register()">Регистрация</button>
+                <button type="button" onclick="login()">Вход</button>
+            </form>
         </div>
 
-        <div class="card">
-            <h2>Рандомные аккаунты WoT от Lesta</h2>
-            <p>Получите рандомные аккаунты World of Tanks с 1 до 50+ топовых танков в ангаре.</p>
-            <p><span class="highlight">Цена: 29 ₽</span></p>
-            <button onclick="buyItem('random')">Получить аккаунты</button>
-        </div>
+        <footer>
+            <p>© 2024 WarCraftBoost. Все права защищены.</p>
+        </footer>
     </div>
-
-    <div class="auth">
-        <h2>Регистрация и вход</h2>
-        <form id="auth-form">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="button" onclick="register()">Регистрация</button>
-            <button type="button" onclick="login()">Вход</button>
-        </form>
-    </div>
-
-    <footer>
-        <p>© 2024 WarCraftBoost. Все права защищены.</p>
-    </footer>
 
     <script>
         const apiUrl = 'https://your-heroku-app.herokuapp.com/api';
@@ -86,6 +88,19 @@
             // Обработайте покупку товара
             alert(`Покупка ${item} успешно завершена!`);
         }
+
+        // Анимация для названия сайта
+        document.addEventListener("DOMContentLoaded", () => {
+            const title = document.querySelector(".title");
+            const titleText = title.textContent;
+            title.innerHTML = "";
+            for (let char of titleText) {
+                const span = document.createElement("span");
+                span.textContent = char;
+                span.className = "bounce";
+                title.appendChild(span);
+            }
+        });
     </script>
 </body>
 </html>
