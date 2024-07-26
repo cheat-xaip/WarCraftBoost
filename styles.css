@@ -96,8 +96,8 @@ button:hover {
 
 .auth {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px; /* Сдвинуто выше */
+    right: 50px; /* Сдвинуто правее */
     display: flex;
     gap: 10px;
 }
@@ -120,8 +120,8 @@ button:hover {
 
 footer {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0px; /* Сдвинуто ниже */
+    right: 20px; /* Сдвинуто правее */
     padding: 20px 0;
     background: transparent;
 }
