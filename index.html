@@ -26,38 +26,14 @@
         header h1 {
             font-size: 2.5em;
             margin: 0;
-            animation: pulse 1.5s infinite;
             position: relative;
+            z-index: 1;
+            animation: fadeInOut 3s infinite;
         }
 
-        header h1::before {
-            content: '❤️';
-            position: absolute;
-            top: -20px;
-            left: -30px;
-            font-size: 2em;
-            animation: heartbeat 1.5s infinite;
-        }
-
-        header h1::after {
-            content: '❤️';
-            position: absolute;
-            top: -20px;
-            right: -30px;
-            font-size: 2em;
-            animation: heartbeat 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         .container {
@@ -155,16 +131,45 @@
             border-color: #ff6f00;
         }
 
+        .moving-stripes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .stripe {
+            position: absolute;
+            height: 100%;
+            width: 200%;
+            background: linear-gradient(90deg, rgba(255, 0, 0, 0.3), rgba(0, 255, 0, 0.3), rgba(0, 0, 255, 0.3));
+            background-size: 50% 100%;
+            animation: moveStripe 2s linear infinite;
+        }
+
+        @keyframes moveStripe {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(50%); }
+        }
+
         footer {
             background-color: #1a1a1a;
             padding: 10px;
             color: #ccc;
             font-size: 0.9em;
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
     <header>
+        <div class="moving-stripes">
+            <div class="stripe"></div>
+        </div>
         <h1>WarCraftBoost</h1>
         <p>Ваш надежный источник читов и аккаунтов для игр</p>
     </header>
@@ -174,27 +179,27 @@
             <h2>Чит для World of Tanks</h2>
             <p>Наш <span class="highlight">чит для World of Tanks</span> позволяет видеть противников без засвета. Идеальный способ улучшить вашу игру и доминировать на поле боя.</p>
             <p><span class="highlight">Цена: 499 ₽</span></p>
-            <a href="https://yoomoney.ru/to/410011161616877" class="button">Купить сейчас</a>
+            <a href="https://yoomoney.ru/to/41001117513149160" class="button">Купить сейчас</a>
         </div>
 
         <div class="card">
             <h2>Чит для Minecraft: HideSOO</h2>
             <p>Чит <span class="highlight">HideSOO</span> обходит анти-чаты Funtime, HolyWorld и Reallyworld. Откройте для себя новые возможности в Minecraft и играйте без ограничений.</p>
             <p><span class="highlight">Цена: 599 ₽</span></p>
-            <a href="https://yoomoney.ru/to/410011161616877" class="button">Купить HideSOO</a>
+            <a href="https://yoomoney.ru/to/41001117513149160" class="button">Купить HideSOO</a>
         </div>
 
         <div class="card">
             <h2>Рандомные аккаунты WoT от Lesta</h2>
             <p>Получите рандомные аккаунты World of Tanks с 1 до 50+ топовых танков в ангаре. Идеально для тех, кто хочет начать с новой страницы!</p>
             <p><span class="highlight">Цена: 29 ₽</span></p>
-            <a href="https://yoomoney.ru/to/410011161616877" class="button">Получить аккаунты</a>
+            <a href="https://yoomoney.ru/to/41001117513149160" class="button">Получить аккаунты</a>
         </div>
     </div>
 
     <div class="payment-options">
         <h2>Способы оплаты</h2>
-        <a href="https://yoomoney.ru/to/410011161616877">Оплатить через ЮMoney</a>
+        <a href="https://yoomoney.ru/to/41001117513149160">Оплатить через ЮMoney</a>
         <a href="https://www.paypal.com">Оплатить через PayPal</a>
         <a href="https://www.stripe.com">Оплатить через Stripe</a>
     </div>
