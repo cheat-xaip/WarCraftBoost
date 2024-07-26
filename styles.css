@@ -1,6 +1,6 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #1e3c72, #2a5298);
+    background: #1a1a1a;
     margin: 0;
     padding: 0;
     color: #fff;
@@ -8,7 +8,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    overflow: hidden;
 }
 
 .wrapper {
@@ -23,15 +22,19 @@ header {
 
 .title {
     font-size: 4em;
-    color: #ffcc00;
+    color: #ff9900;
     margin: 0;
     display: inline-block;
-    animation: bounce 1s infinite;
+    transition: transform 0.2s;
+}
+
+.title:hover {
+    transform: translateY(-10px);
 }
 
 .subtitle {
     font-size: 1.5em;
-    color: #fff;
+    color: #999;
     margin-bottom: 50px;
 }
 
@@ -45,9 +48,9 @@ header {
 }
 
 .card {
-    background: #2a5298;
+    background: #333;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 20px;
     width: 300px;
     text-align: center;
@@ -56,26 +59,26 @@ header {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .card h2 {
-    color: #ffcc00;
+    color: #ff9900;
 }
 
 .card p {
-    color: #fff;
+    color: #ccc;
     margin: 10px 0;
 }
 
 .highlight {
-    color: #ffcc00;
+    color: #ff9900;
     font-weight: bold;
 }
 
 button {
-    background: #ffcc00;
-    color: #2a5298;
+    background: #ff9900;
+    color: #333;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -84,8 +87,8 @@ button {
 }
 
 button:hover {
-    background: #fff;
-    color: #2a5298;
+    background: #ffcc00;
+    color: #333;
     transform: translateY(-5px);
 }
 
@@ -94,7 +97,7 @@ button:hover {
 }
 
 .auth h2 {
-    color: #ffcc00;
+    color: #ff9900;
 }
 
 .auth form {
@@ -106,7 +109,7 @@ button:hover {
 
 .auth input {
     padding: 10px;
-    border: 1px solid #ffcc00;
+    border: 1px solid #ff9900;
     border-radius: 5px;
     width: 200px;
     background: transparent;
@@ -115,18 +118,18 @@ button:hover {
 
 footer {
     padding: 20px 0;
-    background: #2a5298;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    background: #333;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
     margin-top: 30px;
 }
 
 footer p {
     margin: 0;
-    color: #ffcc00;
+    color: #ff9900;
 }
 
-/* Анимация прыгающих букв */
-@keyframes bounce {
+/* Плавающая анимация для названия */
+@keyframes float {
     0%, 100% {
         transform: translateY(0);
     }
@@ -135,37 +138,6 @@ footer p {
     }
 }
 
-.bounce {
-    display: inline-block;
-    animation: bounce 0.3s ease infinite alternate;
-}
-
-/* Летающие полосы */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-
-.floating-line {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #ffcc00, #ffcc00);
-    animation: float 3s ease-in-out infinite;
-    z-index: -1;
-}
-
-.floating-line:nth-child(odd) {
-    animation-delay: 1s;
-}
-
-.floating-line:nth-child(even) {
-    animation-delay: 2s;
+.float {
+    animation: float 1s infinite;
 }
