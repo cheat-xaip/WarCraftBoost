@@ -93,14 +93,12 @@
         // Анимация для названия сайта
         document.addEventListener("DOMContentLoaded", () => {
             const title = document.querySelector(".title");
-            const titleText = title.textContent;
-            title.innerHTML = "";
-            for (let char of titleText) {
-                const span = document.createElement("span");
-                span.textContent = char;
-                span.className = "bounce";
-                title.appendChild(span);
-            }
+            title.addEventListener('mouseover', () => {
+                title.classList.add('float');
+            });
+            title.addEventListener('mouseout', () => {
+                title.classList.remove('float');
+            });
         });
     </script>
 </body>
