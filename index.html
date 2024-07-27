@@ -1,97 +1,143 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WarCraftBoost - Читы и аккаунты для игр</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+<!DOCTYPE html> <html lang="ru"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>WarCraftBoost - Читы и аккаунты для игр</title> <link rel="stylesheet" href="styles.css"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"> </head> <body> <div class="wrapper"> <header> <h1 class="title">WarCraftBoost</h1> <p class="subtitle">Ваш надежный источник читов и аккаунтов для игр</p> </header>
+Download
+
     <div class="wrapper">
         <header>
             <h1 class="title">WarCraftBoost</h1>
             <p class="subtitle">Ваш надежный источник читов и аккаунтов для игр</p>
         </header>
 
-        <div class="container">
-            <div class="card">
-                <h2>Чит для World of Tanks</h2>
-                <p>Наш <span class="highlight">чит для World of Tanks</span> позволяет видеть противников без засвета.</p>
-                <p><span class="highlight">Цена: 499 ₽</span></p>
-                <button onclick="buyItem('wot')">Купить сейчас</button>
-            </div>
-
-            <div class="card">
-                <h2>Чит для Minecraft: HideSOO</h2>
-                <p>Чит <span class="highlight">HideSOO</span> обходит анти-чаты Funtime, HolyWorld и Reallyworld.</p>
-                <p><span class="highlight">Цена: 599 ₽</span></p>
-                <button onclick="buyItem('minecraft')">Купить HideSOO</button>
-            </div>
-
-            <div class="card">
-                <h2>Рандомные аккаунты WoT от Lesta</h2>
-                <p>Получите рандомные аккаунты World of Tanks с 1 до 50+ топовых танков в ангаре.</p>
-                <p><span class="highlight">Цена: 29 ₽</span></p>
-                <button onclick="buyItem('random')">Получить аккаунты</button>
-            </div>
+            <div class="container">
+        <div class="card">
+            <h2>Чит для World of Tanks</h2>
+            <p>Наш <span class="highlight">чит для World of Tanks</span> позволяет видеть противников без засвета.</p>
+            <p><span class="highlight">Цена: 499 ₽</span></p>
+            <button onclick="buyItem('wot')">Купить сейчас</button>
         </div>
 
-        <footer>
-            <p>© 2024 WarCraftBoost. Все права защищены.</p>
-        </footer>
-    </div>
+        <div class="card">
+            <h2>Чит для Minecraft: HideSOO</h2>
+            <p>Чит <span class="highlight">HideSOO</span> обходит анти-чаты Funtime, HolyWorld и Reallyworld.</p>
+            <p><span class="highlight">Цена: 599 ₽</span></p>
+            <button onclick="buyItem('minecraft')">Купить HideSOO</button>
+        </div>
 
-    <div class="modal" id="buyModal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Покупка товара</h2>
-            <p>Пожалуйста, введите ваш email для получения товара:</p>
-            <input type="email" id="email" placeholder="Ваш email" required>
-            <button onclick="confirmPurchase()">Подтвердить покупку</button>
+        <div class="card">
+            <h2>Рандомные аккаунты WoT от Lesta</h2>
+            <p>Получите рандомные аккаунты World of Tanks с 1 до 50+ топовых танков в ангаре.</p>
+            <p><span class="highlight">Цена: 29 ₽</span></p>
+            <button onclick="buyItem('random')">Получить аккаунты</button>
         </div>
     </div>
 
-    <script>
-        const apiUrl = 'https://your-heroku-app.herokuapp.com/api';
-        let currentItem = '';
+    <footer>
+        <p>© 2024 WarCraftBoost. Все права защищены.</p>
+    </footer>
+</div>
 
-        function buyItem(item) {
-            currentItem = item;
-            document.getElementById('buyModal').style.display = 'block';
+<div class="login-modal" id="loginModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Вход в систему</h2>
+        <input type="email" id="loginEmail" placeholder="Email" required>
+        <input type="password" id="loginPassword" placeholder="Пароль" required>
+        <button onclick="loginUser()">Войти</button>
+        <p>Нет аккаунта? <a href="#" onclick="openRegisterModal()">Зарегистрироваться</a></p>
+    </div>
+</div>
+
+<div class="register-modal" id="registerModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2>Регистрация</h2>
+        <input type="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" id="registerPassword" placeholder="Пароль" required>
+        <button onclick="registerUser()">Зарегистрироваться</button>
+        <p>Уже есть аккаунт? <a href="#" onclick="openLoginModal()">Войти</a></p>
+    </div>
+</div>
+
+<div class="modal" id="buyModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Покупка товара</h2>
+        <p>Пожалуйста, введите ваш email для получения товара:</p>
+        <input type="email" id="email" placeholder="Ваш email" required>
+        <button onclick="confirmPurchase()">Подтвердить покупку</button>
+    </div>
+</div>
+
+<script>
+    const apiUrl = 'https://your-heroku-app.herokuapp.com/api';
+    let currentItem = '';
+
+    function buyItem(item) {
+        currentItem = item;
+        document.getElementById('buyModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('buyModal').style.display = 'none';
+    }
+
+    async function confirmPurchase() {
+        const email = document.getElementById('email').value;
+        if (!email) {
+            alert('Пожалуйста, введите ваш email.');
+            return;
         }
-
-        function closeModal() {
-            document.getElementById('buyModal').style.display = 'none';
-        }
-
-        async function confirmPurchase() {
-            const email = document.getElementById('email').value;
-            if (!email) {
-                alert('Пожалуйста, введите ваш email.');
-                return;
-            }
-            const response = await fetch(`${apiUrl}/purchase`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ item: currentItem, email })
-            });
-            const data = await response.text();
-            alert(data);
-            closeModal();
-        }
-
-        // Анимация для названия сайта
-        document.addEventListener("DOMContentLoaded", () => {
-            const title = document.querySelector(".title");
-            title.addEventListener('mouseover', () => {
-                title.classList.add('float');
-            });
-            title.addEventListener('mouseout', () => {
-                title.classList.remove('float');
-            });
+        const response = await fetch(`${apiUrl}/purchase`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ item: currentItem, email })
         });
-    </script>
-</body>
-</html>
+        const data = await response.text();
+        alert(data);
+        closeModal();
+    }
+
+    // Логин-регистрация
+    function openLoginModal() {
+        document.getElementById('loginModal').style.display = 'block';
+        document.getElementById('registerModal').style.display = 'none';
+    }
+
+    function closeLoginModal() {
+        document.getElementById('loginModal').style.display = 'none';
+    }
+
+    function openRegisterModal() {
+        document.getElementById('registerModal').style.display = 'block';
+        document.getElementById('loginModal').style.display = 'none';
+    }
+
+    function closeRegisterModal() {
+        document.getElementById('registerModal').style.display = 'none';
+    }
+
+    async function loginUser() {
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        const response = await fetch(`${apiUrl}/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+        const data = await response.json();
+        if (data.success) {
+            alert('Вход успешно выполнен');
+            closeLoginModal();
+        } else {
+            alert('Неверный email или пароль');
+        }
+    }
+
+    async function registerUser() {
+        const email = document.getElementById('registerEmail').value;
+        const password = document.getElementById('registerPassword').value;
+        const response = await fetch(`${apiUrl}/register`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password })
+        });
+        const data = await response
