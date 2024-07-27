@@ -1,134 +1,135 @@
-<!DOCTYPE html> <html lang="ru"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>WarCraftBoost - Читы и аккаунты для игр</title> <link rel="stylesheet" href="styles.css"> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"> </head> <body> <div class="wrapper"> <header> <h1 class="title">WarCraftBoost</h1> <p class="subtitle">Ваш надежный источник читов и аккаунтов для игр</p> </header>
-    <div class="container">
-        <div class="card">
-            <h2>Чит для World of Tanks</h2>
-            <p>Наш <span class="highlight">чит для World of Tanks</span> позволяет видеть противников без засвета.</p>
-            <p><span class="highlight">Цена: 499 ₽</span></p>
-            <button onclick="buyItem('wot')">Купить сейчас</button>
-        </div>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiteRabbitNeo - Accounts and Cheats for Lesta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>WhiteRabbitNeo</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Accounts</a></li>
+                <li><a href="#">Cheats</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="card">
-            <h2>Чит для Minecraft: HideSOO</h2>
-            <p>Чит <span class="highlight">HideSOO</span> обходит анти-чаты Funtime, HolyWorld и Reallyworld.</p>
-            <p><span class="highlight">Цена: 599 ₽</span></p>
-            <button onclick="buyItem('minecraft')">Купить HideSOO</button>
-        </div>
+    <main>
+        <section id="hero">
+            <h2>Welcome to WhiteRabbitNeo</h2>
+            <p>Get the best accounts and cheats for Lesta online</p>
+            <a href="#" class="cta-button">Shop Now</a>
+        </section>
 
-        <div class="card">
-            <h2>Рандомные аккаунты WoT от Lesta</h2>
-            <p>Получите рандомные аккаунты World of Tanks с 1 до 50+ топовых танков в ангаре.</p>
-            <p><span class="highlight">Цена: 29 ₽</span></p>
-            <button onclick="buyItem('random')">Получить аккаунты</button>
-        </div>
-    </div>
+        <section id="accounts">
+            <h2>Accounts</h2>
+            <p>High-quality accounts for Lesta</p>
+            <!-- Accounts gallery -->
+            <div class="accounts-gallery">
+                <!-- Account card -->
+                <div class="account-card">
+                    <img src="account1.jpg" alt="Account 1">
+                    <h3>Account 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <!-- More account cards -->
+            </div>
+        </section>
+
+        <section id="cheats">
+            <h2>Cheats</h2>
+            <p>Powerful cheats for Lesta</p>
+            <!-- Cheats gallery -->
+            <div class="cheats-gallery">
+                <!-- Cheat card -->
+                <div class="cheat-card">
+                    <img src="cheat1.jpg" alt="Cheat 1">
+                    <h3>Cheat 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="buy-button">Buy Now</a>
+                </div>
+                <!-- More cheat cards -->
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About WhiteRabbitNeo</h2>
+            <p>We are a company dedicated to providing high-quality accounts and cheats for the game Lesta. Our mission is to enhance your gaming experience and help you achieve success in the game.</p>
+            <!-- Add more information about the company -->
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have any questions or need assistance? Feel free to reach out to us.</p>
+            <!-- Add a contact form or include a link to a contact page -->
+        </section>
+    </main>
 
     <footer>
-        <p>© 2024 WarCraftBoost. Все права защищены.</p>
+        <p>&copy; 2023 WhiteRabbitNeo. All rights reserved.</p>
     </footer>
-</div>
 
-<div class="login-modal" id="loginModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeLoginModal()">&times;</span>
-        <h2>Вход в систему</h2>
-        <input type="email" id="loginEmail" placeholder="Email" required>
-        <input type="password" id="loginPassword" placeholder="Пароль" required>
-        <button onclick="loginUser()">Войти</button>
-        <p>Нет аккаунта? <a href="#" onclick="openRegisterModal()">Зарегистрироваться</a></p>
-    </div>
-</div>
+    <script src="script.js"></script>
+</body>
+</html>
 
-<div class="register-modal" id="registerModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeRegisterModal()">&times;</span>
-        <h2>Регистрация</h2>
-        <input type="email" id="registerEmail" placeholder="Email" required>
-        <input type="password" id="registerPassword" placeholder="Пароль" required>
-        <button onclick="registerUser()">Зарегистрироваться</button>
-        <p>Уже есть аккаунт? <a href="#" onclick="openLoginModal()">Войти</a></p>
-    </div>
-</div>
+<!-- styles.css -->
+/* Add your CSS styles here */
 
-<div class="modal" id="buyModal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h2>Покупка товара</h2>
-        <p>Пожалуйста, введите ваш email для получения товара:</p>
-        <input type="email" id="email" placeholder="Ваш email" required>
-        <button onclick="confirmPurchase()">Подтвердить покупку</button>
-    </div>
-</div>
+/* Example styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-<script>
-    const apiUrl = 'https://your-heroku-app.herokuapp.com/api';
-    let currentItem = '';
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
 
-    function buyItem(item) {
-        currentItem = item;
-        document.getElementById('buyModal').style.display = 'block';
-    }
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
 
-    function closeModal() {
-        document.getElementById('buyModal').style.display = 'none';
-    }
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
 
-    async function confirmPurchase() {
-        const email = document.getElementById('email').value;
-        if (!email) {
-            alert('Пожалуйста, введите ваш email.');
-            return;
-        }
-        const response = await fetch(`${apiUrl}/purchase`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ item: currentItem, email })
-        });
-        const data = await response.text();
-        alert(data);
-        closeModal();
-    }
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+}
 
-    // Логин-регистрация
-    function openLoginModal() {
-        document.getElementById('loginModal').style.display = 'block';
-        document.getElementById('registerModal').style.display = 'none';
-    }
+main {
+    padding: 20px;
+}
 
-    function closeLoginModal() {
-        document.getElementById('loginModal').style.display = 'none';
-    }
+section {
+    margin-bottom: 40px;
+}
 
-    function openRegisterModal() {
-        document.getElementById('registerModal').style.display = 'block';
-        document.getElementById('loginModal').style.display = 'none';
-    }
+footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
 
-    function closeRegisterModal() {
-        document.getElementById('registerModal').style.display = 'none';
-    }
+/* Add more styles as needed */
 
-    async function loginUser() {
-        const email = document.getElementById('loginEmail').value;
-        const password = document.getElementById('loginPassword').value;
-        const response = await fetch(`${apiUrl}/login`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
-        });
-        const data = await response.json();
-        if (data.success) {
-            alert('Вход успешно выполнен');
-            closeLoginModal();
-        } else {
-            alert('Неверный email или пароль');
-        }
-    }
+<!-- script.js -->
+// Add your JavaScript code here
 
-    async function registerUser() {
-        const email = document.getElementById('registerEmail').value;
-        const password = document.getElementById('registerPassword').value;
-        const response = await fetch(`${apiUrl}/register`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
-       
+// Example JavaScript code
+console.log('JavaScript is working fine!');
